@@ -16,7 +16,26 @@ class Image(models.Model):
     description=models.TextField()
     location=models.ForeignKey(Location,null=True)
     category=models.ForeignKey(Category, null=True)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    pub_date = models.DateTimeField(auto_now_add=True,null=True)
+
+    def save_image(self):
+         self.save()
+    def delete_image(self):
+      self.delete()
+
+    @classmethod
+    def get_image(cls,id):
+     try:
+      image=Image.objects.get(id=id)
+      return image
+     except DoesNotExist:
+       return Image.objects.get(id=1)
+
+    @classmethod
+    def get_category_images(cls,cat):
+      categori=Category.objects.get(category=cat.category)
+      images=Image,objects.filter(category=categori)
+      return images
 
 
 

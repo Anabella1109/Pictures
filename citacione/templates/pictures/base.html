@@ -5,17 +5,19 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>Moringa Tribune - {{title}}</title>
+  <title>Slika - {{title}}</title>
   {% else %}
-    <title> Moringa Tribune </title>
+    <title> Slika </title>
   {% endif %}
 
   {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   {% endblock %}
 
 </head>
 <body>
+    {% include "navbar.html" %}
     {% block content %} <h1 class='text-center'>News for {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
     {% block scripts %}

@@ -16,6 +16,7 @@ class Image(models.Model):
     description=models.TextField()
     location=models.ForeignKey(Location,null=True)
     category=models.ForeignKey(Category, null=True)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
 
 

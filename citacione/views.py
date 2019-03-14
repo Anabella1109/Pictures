@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http  import HttpResponse
+from django.shortcuts import render, redirect
+from django.http  import HttpResponse,Http404
 import datetime as dt
 from .models import Image
 
@@ -17,7 +17,7 @@ def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
-        searched_imagess = Image.search_by_name(search_term)
+        searched_images = Image.search_by_name(search_term)
         message = f"{search_term}"
 
         return render(request, 'pictures/search.html',{"message":message,"images": searched_images})

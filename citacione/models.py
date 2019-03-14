@@ -6,9 +6,13 @@ class Location(models.Model):
      country=models.CharField(max_length=50)
      city=models.CharField(max_length=50)
      place=models.CharField(max_length=50,default='unkown',null=True)
+     def __str__(self):
+        return self.country
 
 class Category(models.Model):
      category=models.CharField(max_length=50)
+     def __str__(self):
+        return self.category
 
 class Image(models.Model):
     image=models.ImageField(upload_to = 'images/')
@@ -17,6 +21,9 @@ class Image(models.Model):
     location=models.ForeignKey(Location,null=True)
     category=models.ForeignKey(Category, null=True)
     pub_date = models.DateTimeField(auto_now_add=True,null=True)
+
+    def __str__(self):
+        return self.name
 
     def save_image(self):
          self.save()
@@ -33,12 +40,12 @@ class Image(models.Model):
 
     @classmethod
     def get_category_images(cls,cat):
-      categori=Category.objects.get(category=cat)
+      categori=Category.objects.filter(category=cat).first()
       images=Image.objects.filter(category=categori)
       return images
     @classmethod
     def get_location_images(cls,loc):
-      locati=Location.objects.get(pk=loc)
+      locati=Location.objects.filter(pk=loc)
       images=Image.objects.filter(location=locati)
       return images
 

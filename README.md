@@ -1,6 +1,6 @@
-# Silka
+# Slika
 
-Silka is a website where users can view different pictures.A viewer can view images according to different categories like places,food,clothes and so on.A user can also view a certain pictures to see its details like the name of the picture,the picture in bigger size and the location where the picture was taken
+Slika is a website where users can view different pictures.A viewer can view images according to different categories like places,food,clothes and so on.A user can also view a certain pictures to see its details like the name of the picture,the picture in bigger size and the location where the picture was taken
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 * pip
 * Django 1.11
 
-###Clonig
+###Cloning
 
 
 <!-- ```

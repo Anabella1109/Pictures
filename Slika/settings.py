@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Slika.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tribune',
+        'NAME': 'slica',
         'USER': 'wecode',
     'PASSWORD':'bellamava',
     }

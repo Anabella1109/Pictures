@@ -3,6 +3,19 @@
 {{ block.super}}
 
 <div>
+    <div class="container" style="float:left; clear: both;">
+        <ul style="list-style-type: none; margin: 0; padding: 0">
+            <li><a href="/location/1">France,Paris</a></li>
+            <li><a href="/location/2">Rwanda,Kigali</a></li>
+             <li><a href="/location/3">New york</a></li>
+             <li><a href="/location/4">SA,Johanesburg</a></li>
+             <!-- <li><a href="/location/5">TOILETRIES</a></li>
+             <li><a href="/location/6">MADE IN RWANDA</a></li> -->
+             
+             
+        
+        </ul>
+        </div>
 
   <!-- Looping through news   -->
   {% for pic_item in pics %}
@@ -14,8 +27,8 @@
     </div> -->
 
     <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <a href="" data-toggle="modal" data-target="#{{pic_item.id}}"> <img src="{{pic_item.image.url}}" class="img-responsive" alt="Image" height="250" width="250"></a>
+    <div class="">
+      <a href="" data-toggle="modal" data-target="#{{pic_item.id}}"> <img src="{{pic_item.image.url}}" class="img-responsive" alt="Image"  width="250"></a>
     </div>
 
   </div>
@@ -26,10 +39,12 @@
         <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title text-center">{{pic_item.name}}</h4>
+              <img src="{{pic_item.image.url}}" alt="" id='inmodal' height="550" width="550">
+             
             </div>
             <div class="modal-body">
-              <img src="{{pic_item.image.url}}" alt="" id='inmodal'>
+             
+              <h4 class="modal-title text-center">{{pic_item.name}}</h4>
               <p>{{pic_item.description}}</p>
               <p> Taken at:{{pic_item.location.country}} {{pic_item.location.city}} {{pic_item.location.place}}</p>
             </div>

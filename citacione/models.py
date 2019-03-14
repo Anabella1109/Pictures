@@ -41,7 +41,7 @@ class Image(models.Model):
       locati=Location.objects.get(pk=loc)
       images=Image.objects.filter(location=locati)
       return images
-      
+
     @classmethod
     def search_by_name(cls,search_term):
         images = cls.objects.filter(category__icontains=search_term)

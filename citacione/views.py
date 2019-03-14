@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse,Http404
 import datetime as dt
-from .models import Image
+from .models import Image,Category
 
 # Create your views here.
 def welcome(request):
@@ -17,7 +17,7 @@ def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
-        searched_images = Image.search_by_name(search_term)
+        searched_images = Image.get_category_images(search_term)
         message = f"{search_term}"
 
         return render(request, 'pictures/search.html',{"message":message,"images": searched_images})
@@ -25,6 +25,11 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'pictures/search.html',{"message":message})
+def location(request,loc):
+    images=Image.get_location_images(loc=loc)
+    return render(request, 'pictures/location.html',{"images": images})
+
+    
 
 
 # Create your views here.

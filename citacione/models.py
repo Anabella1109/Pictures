@@ -33,12 +33,18 @@ class Image(models.Model):
 
     @classmethod
     def get_category_images(cls,cat):
-      categori=Category.objects.get(category=cat.category)
-      images=Image,objects.filter(category=categori)
+      categori=Category.objects.get(category=cat)
+      images=Image.objects.filter(category=categori)
       return images
     @classmethod
+    def get_location_images(cls,loc):
+      locati=Location.objects.get(pk=loc)
+      images=Image.objects.filter(location=locati)
+      return images
+      
+    @classmethod
     def search_by_name(cls,search_term):
-        images = cls.objects.filter(name__icontains=search_term)
+        images = cls.objects.filter(category__icontains=search_term)
         return images
 
 

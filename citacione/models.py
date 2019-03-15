@@ -27,14 +27,14 @@ class Category(models.Model):
      def save_category(self):
          self.save()
 
-    #  def delete_category(self):
-    #   self.delete()
+     def delete_category(self):
+      self.delete()
 
-    #  @classmethod
-    #  def update_name(cls,id,new):
-    #   cat=Category.objects.filter(id=id)
-    #   cat.update(category=new)
-    #   return cat
+     @classmethod
+     def update_name(cls,id,new):
+      cat=Category.objects.filter(id=id)
+      cat.update(category=new)
+      return cat
 
 class Image(models.Model):
     image=models.ImageField(upload_to = 'images/')
@@ -52,8 +52,8 @@ class Image(models.Model):
     def delete_image(self):
       self.delete()
 
-    # @classmethod
-    # def get_image(cls,id):
+    @classmethod
+    def get_image(cls,id):
     #  try:
       image=Image.objects.filter(id=id)
       return image

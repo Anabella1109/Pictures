@@ -60,17 +60,17 @@ class ImageTestClass(TestCase):
          categories=Category.objects.all()
          self.assertTrue(len(categories)>0)
           
-      #  def test_delete_location(self):
+       def test_delete_location(self):
         
-      #    self.location.delete_location()
-      #    locations = Location.objects.all()
-      #    self.assertTrue(len(locations) == 0)
+         self.location.delete_location()
+         locations = Location.objects.all()
+         self.assertTrue(len(locations) == 0)
 
-      #  def test_delete_category(self):
+       def test_delete_category(self):
         
-      #    self.cat.delete_category()
-      #    categories= Category.objects.all()
-      #    self.assertTrue(len(categories) == 0)
+         self.cat.delete_category()
+         categories= Category.objects.all()
+         self.assertTrue(len(categories) == 0)
 
       #  def test_update_location(self):
       #     new_location=Location.update_all(1,'kiki','koko','lolo')

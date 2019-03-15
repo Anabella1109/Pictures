@@ -72,13 +72,13 @@ class ImageTestClass(TestCase):
          categories= Category.objects.all()
          self.assertTrue(len(categories) == 0)
 
-      #  def test_update_location(self):
-      #     new_location=Location.update_all(1,'kiki','koko','lolo')
-      #     self.assertTrue(self.location != new_location)
+       def test_update_location(self):
+          new_location=Location.update_all(1,'kiki','koko','lolo')
+          self.assertTrue(self.location != new_location)
 
-      #  def test_update_category(self):
-      #     new_category=Category.update_name(1,'kiki')
-      #     self.assertTrue(self.cat.category != new_category)
+       def test_update_category(self):
+          new_category=Category.update_name(1,'kiki')
+          self.assertTrue(self.cat.category != new_category)
         
 
 

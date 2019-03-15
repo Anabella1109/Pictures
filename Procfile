@@ -1,1 +1,1 @@
-web: gunicorn Slika.wsgi --log-file -
+web apps: gunicorn Slika.wsgi --log-file -

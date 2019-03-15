@@ -46,19 +46,19 @@ class ImageTestClass(TestCase):
           imagess=Image.objects.filter(location=self.location)
           self.assertQuerysetEqual(images,imagess)
 
-      #  def test_update_image(self):
-      #   new_image=Image.update_name(1,'kiki')
-      #   self.assertTrue(self.image.name != new_image)
+       def test_update_image(self):
+        new_image=Image.update_name(1,'kiki')
+        self.assertTrue(self.image.name != new_image)
 
-      #  def test_save_location(self):
-      #    self.location.save_location()
-      #    locations=Location.objects.all()
-      #    self.assertTrue(len(locations)>0)
+       def test_save_location(self):
+         self.location.save_location()
+         locations=Location.objects.all()
+         self.assertTrue(len(locations)>0)
 
-      #  def test_save_category(self):
-      #    self.cat.save_category()
-      #    categories=Category.objects.all()
-      #    self.assertTrue(len(categories)>0)
+       def test_save_category(self):
+         self.cat.save_category()
+         categories=Category.objects.all()
+         self.assertTrue(len(categories)>0)
           
       #  def test_delete_location(self):
         

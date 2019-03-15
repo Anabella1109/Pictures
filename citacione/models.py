@@ -1,5 +1,6 @@
 from django.db import models
 import datetime as dt
+import pyperclip
 
 
 class Location(models.Model):
@@ -51,6 +52,10 @@ class Image(models.Model):
          self.save()
     def delete_image(self):
       self.delete()
+    @classmethod
+    def share(cls,id):
+      image=Image.objects.filter(id=id)
+      self.pyperclip.copy(image.image.cdn_url)
 
     @classmethod
     def get_image(cls,id):

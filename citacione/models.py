@@ -43,6 +43,7 @@ class Image(models.Model):
     description=models.TextField()
     location=models.ForeignKey(Location,null=True)
     category=models.ForeignKey(Category, null=True)
+    url=models.TextField(max_length=500, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True,null=True)
 
     def __str__(self):
@@ -54,8 +55,8 @@ class Image(models.Model):
       self.delete()
     @classmethod
     def share(cls,id):
-      image=Image.objects.filter(id=id)
-      self.pyperclip.copy(image.image.cdn_url)
+      image=Image.objects.get(id=id)
+      pyperclip.copy(image.url)
 
     @classmethod
     def get_image(cls,id):

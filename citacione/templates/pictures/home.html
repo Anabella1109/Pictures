@@ -2,25 +2,18 @@
 {% block content %} 
 {{ block.super}}
 
-<div>
 
 
-  <!-- Looping through news   -->
+
+
   {% for pic_item in pics %}
 
   <div class=" hello">
-    <!-- displaying News articles -->
-    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ pic_item.name }} </h2>
-    </div> -->
-
-    <!--Display news Article images  -->
-    <!-- <div class="row"> -->
-    <div class="column col-lg-6 col-md-6 col-sm-6 col-xs-6">
+   
+    <div class="col-md-3">
       <a href="" data-toggle="modal" data-target="#{{pic_item.id}}"> <img src="{{pic_item.image.url}}" class="img-responsive responsive img-holder" alt="Image"  height="200" width="300" ></a>
     </div>
 
-  <!-- </div> -->
 
   <div id="{{pic_item.id}}" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -38,7 +31,7 @@
               <p> Taken at:{{pic_item.location.country}} {{pic_item.location.city}} {{pic_item.location.place}}</p>
               <a href="/share/{{pic_item.id}}" class="btn btn-primary">Copy image address to clipboard</a>
             </div>
-            <!-- <div id="caption">{{pic_item.name}}</div> -->
+          
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>

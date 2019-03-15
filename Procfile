@@ -1,0 +1,1 @@
+web apps: gunicorn Slika.wsgi --log-file -

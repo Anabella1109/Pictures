@@ -6,25 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="color:cadetblue; background-color:black;">
+<nav class=" navbar-inverse" style="color:cadetblue; background-color:black;">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% url 'picToday' %}" style="color:cadetblue;">Slika</a>
     </div>
   </div>
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#news">News</a>
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="/location/1">France,Paris</a>
+      <a href="/location/2">Rwanda,Kigali</a>
+      <a href="/location/3">New york</a>
+      <a href="/location/4">SA,Johanesburg</a>
+    </div>
   </div>
   <div class="col-sm-4 col-md-4 navbar-right">
   <form class="navbar-form" role="search" action="{% url 'search_results' %}">

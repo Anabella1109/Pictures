@@ -83,6 +83,12 @@ class Image(models.Model):
         return images
 
     @classmethod
+    def search_by_category(cls,search_term):
+                category = Category.objects.filter(category__icontains=search_term).first()
+                image = cls.objects.filter(category=category)
+                return image
+
+    @classmethod
     def update_name(cls,id,new):
       image=Image.objects.filter(id=id)
       image.update(name=new)

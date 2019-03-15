@@ -2,16 +2,14 @@
 {% block content %} 
 {{ block.super}}
 
-
-
-
-
   {% for pic_item in pics %}
 
   <div class=" hello">
    
-    <div class="col-md-3">
-      <a href="" data-toggle="modal" data-target="#{{pic_item.id}}"> <img src="{{pic_item.image.url}}" class="img-responsive responsive img-holder" alt="Image"  height="200" width="300" ></a>
+    <div class="col-md-4 img-holder hh">
+      <div class="image-details">
+      <a href="" data-toggle="modal" data-target="#{{pic_item.id}}"> <img src="{{pic_item.image.url}}" class="img-responsive responsive img-holder" alt="Image"  height="200" width="300" id="hey" ></a>
+    </div>
     </div>
 
 
@@ -29,7 +27,7 @@
               <h4 class="modal-title text-center">{{pic_item.name}}</h4>
               <p>{{pic_item.description}}</p>
               <p> Taken at:{{pic_item.location.country}} {{pic_item.location.city}} {{pic_item.location.place}}</p>
-              <a href="/share/{{pic_item.id}}" class="btn btn-primary">Copy image address to clipboard</a>
+              <a href="/share/{{pic_item.id}}" class="btn btn-primary">Share</a>
             </div>
           
             <div class="modal-footer">

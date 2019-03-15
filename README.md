@@ -100,7 +100,10 @@ Slack:TUYISENGE Anabella
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+[MIT](https://choosealicense.com/licenses/mit/)
+Copyright (c) 2019 **TUYISENGE Anabella**
+
 
 ## Acknowledgments
 

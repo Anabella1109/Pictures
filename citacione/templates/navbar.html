@@ -6,14 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class=" navbar-inverse" style="color:cadetblue; background-color:black;">
+<nav class=" navbar-inverse" style="color:cadetblue; background-color: #7D451B;height: 100px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'picToday' %}" style="color:cadetblue;">Slika</a>
+      <a class="navbar-brand" href="{% url 'picToday' %}" style="color:#B28723;font-family: 'Pacifico', cursive;font-size: 40px;margin-top:5px; ">Slika</a>
     </div>
+    <div class="">
+      <form class="" role="search" action="{% url 'search_results' %}" style="width:600px;margin-top:5px;">
+    
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search category" name="image">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
+        </div>
+      </form>
+    
+      
+    
+    </div>
+    
   </div>
+  <div class="navbar-right">
   <div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
+    <button class="dropbtn" style="background-color:#472C1B;color:#B28723;margin-right: 5px;margin-bottom: 5px;">Locations</button>
     <div class="dropdown-content">
       <a href="/location/1">France,Paris</a>
       <a href="/location/2">Rwanda,Kigali</a>
@@ -21,21 +37,7 @@
       <a href="/location/4">SA,Johanesburg</a>
     </div>
   </div>
-  <div class="col-sm-4 col-md-4 navbar-right">
-  <form class="navbar-form" role="search" action="{% url 'search_results' %}" style="width:500px;">
-
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search category" name="image">
-      <div class="input-group-btn">
-        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-      </div>
-    </div>
-  </form>
-
-  
-  
 </div>
-
 </nav>
 </body>
 </html>

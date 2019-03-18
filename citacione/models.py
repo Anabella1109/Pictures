@@ -71,17 +71,17 @@ class Image(models.Model):
       categori=Category.objects.filter(category=cat).first()
       images=Image.objects.filter(category=categori)
       return images
-      
+
     @classmethod
     def get_location_images(cls,loc):
       locati=Location.objects.filter(pk=loc)
       images=Image.objects.filter(location=locati)
       return images
 
-    @classmethod
-    def search_by_name(cls,search_term):
-        images = cls.objects.filter(category__icontains=search_term)
-        return images
+    # @classmethod
+    # def search_by_name(cls,search_term):
+    #     images = cls.objects.filter(category__icontains=search_term)
+    #     return images
 
     @classmethod
     def search_by_category(cls,search_term):

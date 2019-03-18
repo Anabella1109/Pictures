@@ -3,6 +3,7 @@ import datetime as dt
 import pyperclip
 
 
+
 class Location(models.Model):
      country=models.CharField(max_length=50)
      city=models.CharField(max_length=50)

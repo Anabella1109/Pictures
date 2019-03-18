@@ -71,6 +71,7 @@ class Image(models.Model):
       categori=Category.objects.filter(category=cat).first()
       images=Image.objects.filter(category=categori)
       return images
+      
     @classmethod
     def get_location_images(cls,loc):
       locati=Location.objects.filter(pk=loc)
